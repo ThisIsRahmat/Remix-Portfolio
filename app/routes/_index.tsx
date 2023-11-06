@@ -59,10 +59,10 @@ export default function Index() {
   return (
     <div>
   <div>
-      <p className=" text-slate-800 text-xl md:text-2xl mx-auto m-6">
+      <h2 className=" text-slate-800 text-2xl md:text-4xl mx-auto m-6">
       I’m Rahmat Junaid,
-a  infrastructure engineer based in the UK.
-      </p>
+an  infrastructure engineer based in the UK.
+      </h2>
 <p className=" text-slate-800 text-lg md:text-xl mx-auto m-6">
 This is my little home on the web where I talk about work and write bits and bobs on software development.
 </p>

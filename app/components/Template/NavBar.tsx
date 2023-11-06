@@ -31,7 +31,7 @@ export default function Navbar() {
       };
 
   return (
-    <div className="mt-20">
+    <div className="mt-10 md:mt-20">
 
         <Link to="/">
 
@@ -57,12 +57,12 @@ export default function Navbar() {
 
 
                   {/*navlink gives an active state*/}
-                  <nav className="flex justify-center space-x-4 py-4">
+                  <nav className="flex justify-center gap-2 space-x-4 py-4">
 
                   {navigation.map((nav) => (
                     <div key={nav.name}>
                        <Link to={nav.href}>
-                        <button className=" font-[JetBrainsMono] text-xl space-x-2 border inline-flex rounded-lg px-2 py-2 hover:bg-blue-300">
+                        <button className=" font-[JetBrainsMono] text-lg md:text-xl space-x-2 border inline-flex rounded-lg px-2 py-2 hover:bg-blue-300">
                        
                         <div className="px-2">
                        {nav.icon}
