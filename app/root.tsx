@@ -16,7 +16,7 @@ import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from "remix-themes"
 
 
 import { ReactNode } from "react";
-import TemNavbar from "./components/Template/TemNavbar";
+import Navbar from "./components/Template/Navbar";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -73,7 +73,7 @@ function Layout ({children} : {children : ReactNode} )
 {
   return(
   <div>
-    <TemNavbar/>
+    <Navbar/>
   
     <main className=" max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 mt-5">{children}</main>
 

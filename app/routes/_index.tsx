@@ -1,5 +1,6 @@
 import Profile from "~/components/Template/Profile";
 import Me from "../../public/me.png";
+import Navbar from "../components/Template/Navbar";
 
 import React from "react";
 import { Link, useLoaderData } from "@remix-run/react";
@@ -34,11 +35,7 @@ export default function Index() {
   const { posts } = useLoaderData() as AppProps;
   return (
     <div>
-      <Profile
-        imageSrc={Me}
-        name="Mahrouch Lina"
-        description="Software Engineer who's obsessed with learning and building new things."
-      />
+
       <h1 className="tracking-tighter font-bold dark:text-slate-300 text-slate-800 text-3xl md:text-4xl mx-auto m-6">
         My Recent Posts
       </h1>
