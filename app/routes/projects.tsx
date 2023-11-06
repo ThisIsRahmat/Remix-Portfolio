@@ -33,9 +33,19 @@ const Projects = () => {
   const { projects } = useLoaderData() as AppProps;
   return (
     <div className="py-8 px-4">
-    <h1 className="text-3xl font-bold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 mb-12">
-      My Projects
+    <h1 className="text-3xl  leading-9  sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 mb-12">
+    Projects
     </h1>
+
+    <p>
+I have a lot of project ideas and I enjoy building my ideas.
+
+</p>
+
+
+<p>
+    My current technichal goal is to become an expert in Golang + Nextjs(Typescript/Javascript) skills so those are the main languages I am building my projects in
+</p>
     <div className="flex flex-wrap gap-8 justify-center">
       {projects.projects.map((project) => (
         <div

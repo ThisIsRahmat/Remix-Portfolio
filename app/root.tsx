@@ -16,7 +16,7 @@ import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from "remix-themes"
 
 
 import { ReactNode } from "react";
-import Navbar from "./components/Template/Navbar";
+import Navbar from "./components/Template/NavBar";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -57,7 +57,7 @@ export default function AppWithProvider(){
         <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
         <Links />
       </head>
-      <body className="bg-white text-black dark:bg-black  dark:text-white  ">
+      <body className="bg-white text-black ">
      <Layout>
      <Outlet />
       <ScrollRestoration />

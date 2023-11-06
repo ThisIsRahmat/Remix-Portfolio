@@ -5,18 +5,41 @@
 
 
 @font-face {
-    font-family: 'Satoshi-Regular';
-    src: url('../fonts/Satoshi-Bold.woff2') format('woff2'),
-         url('../fonts/Satoshi-Bold.woff') format('woff'),
-         url('../fonts/Satoshi-Bold.ttf') format('truetype');
-         font-weight: 400;
-         font-display: swap;
-         font-style: normal;
+    font-family: 'EditorialNew';
+    src: 
+    /* url('../fonts/PPEditorialNew-Italic.otf') format('opentype'),
+    url('../fonts/PPEditorialNew-UltraboldItalic.otf') format('opentype'), */
+    url('../fonts/PPEditorialNew-Regular.otf') format('opentype'),
+    url('../fonts/PPEditorialNew-Ultralight.otf') format('opentype'),
+    /* url('../fonts/PPEditorialNew-Ultrabold.otf') format('opentype'),
+         url('../fonts/PPEditorialNew-UltralightItalic.otf') format('opentype'), */
+
+      
   }
 
 
+  
+        
+  @font-face {
+    font-family: 'JetBrainsMono';
+    src: 
+    /* url('../fonts/JetBrainsMono-Medium.woff2') format('woff2'),
+    url('../fonts/JetBrainsMono-ExtraBold.woff2 ') format('woff2'),
+    url('../fonts/JetBrainsMono-MediumItalic.woff2') format('woff2'),
+    url('../fonts/JetBrainsMono-ExtraBoldItalic.woff2 ') format('woff2'), */
+    url('../fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+  }
+
 
 body {
-    font-family: 'Satoshi-Bold', sans-serif;
+    background-color: brown;
 }
 
+
+p {
+    font-family: 'JetBrainsMono', sans-serif;
+}
+
+h1, h2, h4, h5, h6  {
+    font-family: 'EditorialNew', sans-serif;
+}
