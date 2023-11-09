@@ -64,7 +64,7 @@ A Product Support Engineer based in the UK
 
 
      <p className="text-lg md:text-xl mx-auto m-6">
-I have been working in a mixutre of Cloud and Support Engineering roles
+I have been working in a mixture of Cloud and Support Engineering roles
 for a little over <span className="font-black underline underline-offset-4 decoration-double">5 years</span> now!
       </p>
 
