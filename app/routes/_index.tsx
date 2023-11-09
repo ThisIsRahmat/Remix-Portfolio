@@ -76,7 +76,7 @@ for a little over <span className="font-black underline underline-offset-4 decor
         Prior to working in tech I completed a degree in Neuroscience 🧠
       </p>
 <p className=" text-slate-800 text-lg md:text-xl mx-auto m-6">
-*ThisisRahmat* is my little home on the web where I document my journey to becoming an absolute <span className="italic font-xl font-black underline">beast</span> on Golang and Javascript plus all the things I build along the way.
+*ThisisRahmat* is my home on the web where I document my journey to becoming an absolute <span className="italic font-xl font-black underline">beast</span> on Golang and Javascript plus all the things I build along the way.
 </p>
 </div>
 
@@ -84,8 +84,8 @@ for a little over <span className="font-black underline underline-offset-4 decor
 
 
 <p className="text-sm">
-  <button className="border text-start rounded-md px-2 py-2 bg-[#EFF6FF]">
-I am currently working through the coding challenges project in Golang, you can following my journey <span className="underline"> <Link to="/post/coding-challenges-building-a-url-shortener-in-go" > here </Link> </span>
+  <button className=" text-center w-full border  rounded-md px-2 py-4 bg-[#EFF6FF]">
+I am currently working through building <span className="hover:text-[#00008B]"> <Link to="https://codingchallenges.substack.com/"> the coding challenges project</Link> </span> in Golang, you can following my journey <span className="underline hover:text-blue-800"> <Link to="/post/coding-challenges-building-a-url-shortener-in-go" > here </Link> </span>
 </button>
   </p>
 
