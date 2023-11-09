@@ -85,7 +85,7 @@ for a little over <span className="font-black underline underline-offset-4 decor
 
 <p className="text-sm">
   <button className=" text-center w-full border  rounded-md px-2 py-4 bg-[#EFF6FF]">
-I am currently working through building <span className="hover:text-[#00008B]"> <Link to="https://codingchallenges.substack.com/"> the coding challenges project</Link> </span> in Golang, you can following my journey <span className="underline hover:text-blue-800"> <Link to="/post/coding-challenges-building-a-url-shortener-in-go" > here </Link> </span>
+I am currently working through building <span className="hover:text-[#00008B]"> <Link to="https://codingchallenges.substack.com/"> the coding challenges project</Link> </span> in Golang, you can follow my journey <span className="underline hover:text-blue-800"> <Link to="/post/coding-challenges-building-a-url-shortener-in-go" > here </Link> </span>
 </button>
   </p>
 
