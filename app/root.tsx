@@ -17,6 +17,7 @@ import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from "remix-themes"
 
 import { ReactNode } from "react";
 import Navbar from "./components/Template/NavBar";
+import Footer from "./components/Template/Footer";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -75,7 +76,7 @@ function Layout ({children} : {children : ReactNode} )
   <div>
     <Navbar/>
   
-    <main className=" max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 mt-5">{children}</main>
+    <main className=" max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 mt-5">{children}<Footer/></main>
 
   </div>
   )

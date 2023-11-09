@@ -9,130 +9,180 @@ import { json } from "@remix-run/node";
 import { gql } from "graphql-request";
 import { hygraph } from "~/utils/hygraph.server";
 import type { Post, Project } from "~/utils/interface";
+import { MoveUpRight } from 'lucide-react';
 
 interface AppProps {
   posts: Post;
   projects: Project;
 }
 
+
+
+
 export async function loader({}: LoaderArgs) {
   const query = gql`
-    query Posts {
-      posts {
-        createdAt
+    query MyQuery {
+      projects(orderBy: publishedAt_DESC) {
         id
+        link
         overview
-        slug
         title
-        updatedAt
+        language 
+        titleImage {
+          url
+        }
+        publishedAt
       }
     }
   `;
-  const posts = await hygraph.request(query);
-  return json({ posts });
-}
 
-export async function project_loader({}: LoaderArgs) {
-  const project_query = gql`
-  query Projects {
-    projects(orderBy: publishedAt_DESC) {
-      id
-      link
-      overview
-      title
-      titleImage {
-        url
-      }
-      publishedAt
-    }
-  }
-  `;
-  const projects = await hygraph.request(project_query);
+  const projects = await hygraph.request(query);
+
   return json({ projects });
 }
 
+const socialLinks = [
+  {name: "Github", href: "https://github.com/ThisIsRahmat"},
+  {name: "Email", href: "mailto:thisisrahmat@gmail.com"},
+  {name:"Linkedin", href: "https://www.linkedin.com/in/rahmat-junaid/"}
+]
+
+
 export default function Index() {
-  const { posts, projects } = useLoaderData() as AppProps;
+  const { projects } = useLoaderData() as AppProps;
 
 
 
   return (
     <div>
   <div>
-      <h2 className=" text-slate-800 text-2xl md:text-4xl mx-auto m-6">
-      I’m Rahmat Junaid,
-an  infrastructure engineer based in the UK.
-      </h2>
+      <h1 className=" text-slate-800 text-xl md:text-2xl mx-auto m-6">
+     Hi! I’m Rahmat, 👋🏾
+     <br/>
+A Product Support Engineer based in the UK 
+     </h1>
+
+
+     <p className="text-lg md:text-xl mx-auto m-6">
+I have been working in a mixutre of Cloud and Support Engineering roles
+for a little over <span className="font-black underline underline-offset-4 decoration-double">5 years</span> now!
+      </p>
+
+      {/* <p>
+        Durign that time I have worked at startups, 
+        </p> */}
+
+      <p className="text-lg md:text-xl mx-auto m-6">
+        Prior to working in tech I completed a degree in Neuroscience 🧠
+      </p>
 <p className=" text-slate-800 text-lg md:text-xl mx-auto m-6">
-This is my little home on the web where I talk about work and write bits and bobs on software development.
+*ThisisRahmat* is my little home on the web where I document my journey to becoming an absolute <span className="italic font-xl font-black underline">beast</span> on Golang and Javascript plus all the things I build along the way.
 </p>
 </div>
+
+{/* Latest Blogs */}
+
+
+<p className="text-sm">
+  <button className="border text-start rounded-md px-2 py-2 bg-[#EFF6FF]">
+I am currently working through the coding challenges project in Golang, you can following my journey <span className="underline"> <Link to="/post/coding-challenges-building-a-url-shortener-in-go" > here </Link> </span>
+</button>
+  </p>
+
+
 {/* Latest Projects */}
 <div>
-       {/* <h1 className=" text-slate-800 text-3xl md:text-4xl mx-auto m-6">
+       <h1 className=" text-slate-800 text-3xl md:text-4xl mx-auto m-6">
         Latest Projects
-      </h1> */}
-      {/* <ul className="flex flex-col gap-4">
-        {projects.projects.slice(0, 3).map((project) => (
-          <li key={project.id}>
-            <article className="p-4 rounded-ld space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0 hover:bg-zinc-200 dark:hover:bg-zinc-800">
-              {/* This div will contain the date, which we want to stack on top on small screens */}
-              {/* <div className="xl:col-span-1"> */}
-                {/* <p className="text-base font-medium leading-6 dark:text-zinc-500 text-zinc-700">
-                  {new Date(project.publishedAt).toISOString().split("T")[0]}
-                </p> */}
-              {/* </div> */}
-              {/* The link and post content will follow */}
-              {/* <Link
-                to={`${project.link}`}
-                prefetch="intent"
-                className="xl:col-span-3" // This will ensure the link takes up the remaining space on larger screens
-              >
-                <h3 className="text-xl font-bold leading-6 tracking-tight mb-2 dark:text-slate-500">
-                  {project.title}
-                </h3>
-                <div className="prose max-w-none dark:text-slate-300">
-                  {project.overview}
-                </div>
+      </h1>
+    <div className="flex flex-wrap gap-8 justify-center">
+      {projects.projects.map((project) => (
+        <div
+          key={project.id}
+          className="flex flex-col border border-gray-700 shadow-lg rounded-lg overflow-hidden w-96 transition-transform duration-300 hover:scale-105"
+        >
+
+          {/* <img
+            className="w-full object-cover h-24" // Adjust the height here with Tailwind's h- class
+            src={project.titleImage.url}
+            alt={project.title}
+          /> */}
+          <div className="flex flex-col flex-1 p-4 justify-between">  
+            <div className="gap-4">
+            <Link to={project.link}>
+<p className="md:text-xl text-lg  font-semibold text-black">
+                {project.title}
+              </p>
+
               </Link>
-            </article>
-          </li> */}
-        {/* ))}
-      </ul> */}
+              <p className="text-md  mt-2">
+                {project.overview}
+              </p>
+             
+              {project.language.map((lang, index) => (
+  <button key={index} className=" hover:bg-purple-400 rounded-xl border px-2 text-sm text-light mt-2 mr-2">
+    {lang}
+
+  </button>
+))}
+
+            </div>
+            {/* <div className="mt-auto"> 
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-center text-white bg-zinc-800 hover:bg-zinc-700 transition-colors duration-300 rounded-lg px-4 py-2 block mt-4"
+              >
+                View Project
+              </a>
+            </div> */}
+          </div>
+        </div>
+      ))}
+    </div>
       </div>
 {/* Latest Blog Posts */}
 <div>
-      <h1 className=" text-slate-800 text-3xl md:text-4xl mx-auto m-6">
-        Latest Blog Post
-      </h1>
+   
       <ul className="flex flex-col gap-4">
-        {posts.posts.slice(0, 3).map((post) => (
-          <li key={post.id}>
-            <article className="p-4 rounded-ld space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0 hover:bg-zinc-200 dark:hover:bg-zinc-800">
-              {/* This div will contain the date, which we want to stack on top on small screens */}
-              <div className="xl:col-span-1">
-                <p className="text-base font-medium leading-6 dark:text-zinc-500 text-zinc-700">
-                  {new Date(post.createdAt).toISOString().split("T")[0]}
-                </p>
-              </div>
-              {/* The link and post content will follow */}
-              <Link
-                to={`/post/${post.slug}`}
-                prefetch="intent"
-                className="xl:col-span-3" // This will ensure the link takes up the remaining space on larger screens
-              >
-                <h3 className="text-xl  leading-6 tracking-tight mb-2 dark:text-slate-500">
-                  {post.title}
-                </h3>
-                <div className="prose max-w-none dark:text-slate-300">
-                  {post.overview}
-                </div>
-              </Link>
-            </article>
-          </li>
-        ))}
+
       </ul>
       </div>
+
+{/* Contact */}
+
+<div>
+<h1 className=" text-slate-800 text-3xl md:text-4xl mx-auto m-6">
+       Contact
+      </h1>
+  </div>
+
+
+  <p className="md:text-2xl text-xl pb-4">
+You can get in touch with me on: 
+</p>
+
+<div className="pl-32">
+<ul className="gap-y-6">
+{socialLinks.map((socialLink) => (
+
+
+
+<li key={socialLink.id} className=" hover:text-purple-500 flex-inline flex  md:text-2xl text-lg">
+  <Link to={socialLink.href}>
+  
+  <div className="flex-inline text-xl flex underline underline-offset-2">
+    {socialLink.name}
+    <MoveUpRight size={24} />
+</div>
+    </Link>
+    </li>
+
+))}
+</ul>
+</div>
+
     </div>
   );
 }

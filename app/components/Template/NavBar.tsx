@@ -18,9 +18,9 @@ const navigation = [
  
     // {name:"Books", href:"/books", icon: <AtSign/>},
     // {name:"Bookmarks", href:"/bookmarks", icon: <AtSign/>},
-    {name:"Blog", href:"/blog", icon: <PencilLine/>},
-    {name:"Contact", href:"/contact", icon: <AtSign/>},
-    {name:"Projects", href:"/projects", icon: <Binary/>}
+    // {name:"Blog", href:"/blog", icon: <PencilLine/>},
+    // {name:"Contact", href:"/contact", icon: <AtSign/>},
+    // {name:"Projects", href:"/projects", icon: <Binary/>}
   ]
 
 export default function Navbar() {

@@ -23,11 +23,14 @@
   @font-face {
     font-family: 'JetBrainsMono';
     src: 
-    /* url('../fonts/JetBrainsMono-Medium.woff2') format('woff2'),
-    url('../fonts/JetBrainsMono-ExtraBold.woff2 ') format('woff2'),
+    url('../fonts/JetBrainsMono-Medium.woff2') format('woff2'),
+    url('../fonts/JetBrainsMono-ExtraBold.woff2') format('woff2'),
     url('../fonts/JetBrainsMono-MediumItalic.woff2') format('woff2'),
-    url('../fonts/JetBrainsMono-ExtraBoldItalic.woff2 ') format('woff2'), */
-    url('../fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('../fonts/JetBrainsMono-ExtraBoldItalic.woff2') format('woff2'),
+    url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    /* font-weight: 400; */
+    font-display: swap;
+    font-style: normal;
   }
 
 
@@ -36,7 +39,7 @@ body {
 }
 
 
-p {
+p, li {
     font-family: 'JetBrainsMono', sans-serif;
 }
 

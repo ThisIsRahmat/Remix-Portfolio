@@ -26,6 +26,7 @@ export interface Post {
       id: string;
       link: string;
       title: string;
+      language: string[];
       overview: string;
       titleImage: {
         url: string;
