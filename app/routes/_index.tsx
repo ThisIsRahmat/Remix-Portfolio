@@ -72,21 +72,43 @@ for a little over <span className="font-black underline underline-offset-4 decor
         Durign that time I have worked at startups, 
         </p> */}
 
-      <p className="text-lg md:text-xl mx-auto m-6">
+      {/* <p className="text-lg md:text-xl mx-auto m-6">
         Prior to working in tech I completed a degree in Neuroscience 🧠
-      </p>
-<p className=" text-slate-800 text-lg md:text-xl mx-auto m-6">
+      </p> */}
+{/* <p className=" text-slate-800 text-lg md:text-xl mx-auto m-6">
 *ThisisRahmat* is my home on the web where I document my journey to becoming an absolute <span className="italic font-xl font-black underline">beast</span> on Golang and Javascript plus all the things I build along the way.
-</p>
+</p> */}
 </div>
 
 {/* Latest Blogs */}
 
+<p className="text-lg md:text-xl mx-auto m-6">
+I am currently completing the 100 Days of Golang challenge and building the following coding projects in order.   </p>
+<p className="text-md">
 
-<p className="text-sm">
-  <button className=" text-center w-full border  rounded-md px-2 py-4 bg-[#EFF6FF]">
-I am currently working through building <span className="hover:text-[#00008B]"> <Link to="https://codingchallenges.substack.com/"> the coding challenges project</Link> </span> in Golang, you can follow my journey <span className="underline hover:text-blue-800"> <Link to="/post/coding-challenges-building-a-url-shortener-in-go" > here </Link> </span>
+  <div className="w-full md:px-72 ">
+  <button className=" w-full md:px-24 items-start border  rounded-md py-4 bg-[#EFF6FF]">
+<span>
+<ul>
+  <li className="pt-2">
+1: URL Shortener 
+    </li>
+    <li className="pt-2">
+2: wc Tool 
+    </li>
+    <li className="pt-2">
+3:  Traceroute
+    </li>
+    <li className="pt-2">
+4: cut Tool 
+    </li>
+    <li className="pt-2">
+5: API rate limiter
+    </li>
+</ul>
+</span>
 </button>
+</div>
   </p>
 
 
